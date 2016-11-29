@@ -22,6 +22,7 @@ use Yii;
  * @property string $description
  * @property string $image
  * @property integer $isDelete
+ * @property integer $limit
  *
  * @property Cmspage $page
  * @property Site $site
@@ -54,7 +55,7 @@ class CmsBlock extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pageId', 'active', 'order', 'type', 'parentId', 'siteId', 'templateId', 'isDelete'], 'integer'],
+            [['pageId', 'active', 'order', 'type', 'parentId', 'siteId', 'templateId', 'isDelete', 'limit'], 'integer'],
             [['title'], 'string', 'max' => 300],
             [['blockName'], 'string', 'max' => 30],
             [['linkTo', 'description', 'image'], 'string', 'max' => 255],
@@ -86,6 +87,7 @@ class CmsBlock extends \yii\db\ActiveRecord
             'description' => 'Description',
             'image' => 'Image',
             'isDelete' => 'Is Delete',
+            'limit' => 'Limit',
         ];
     }
 
