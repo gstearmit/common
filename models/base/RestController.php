@@ -8,7 +8,7 @@
 
 namespace common\models\base;
 
-use cmsapi\models\enum\HttpStatusCode;
+use common\models\enum\HttpStatusCode;
 use common\models\response\Paging;
 use common\models\response\Response;
 use yii\rest\Controller;
