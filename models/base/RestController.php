@@ -50,7 +50,7 @@ abstract class RestController extends Controller implements RestControllerInterf
     {
         $condition = \Yii::$app->request->get('condition', null);
         $object = call_user_func([$this->objectClass, 'find']);
-        if (empty($condition)) {
+        if (!empty($condition)) {
             $object->where($condition);
         }
         $paging = new Paging();
