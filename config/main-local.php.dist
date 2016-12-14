@@ -1,0 +1,39 @@
+<?php
+
+$config = [
+    'components' => [
+        'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => 'KH6-cZMwNOnHXx0QrQFmOrZPb_TFCnlN',
+        ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=192.168.11.252;dbname=weshop_warehouse',
+            'username' => 'dev',
+            'password' => 'Mwqs]Avk>q+8N2vs)zV36ia',
+            'charset' => 'utf8',
+        ],
+        'db1' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=192.168.11.252;dbname=weshop_global',
+            'username' => 'dev',
+            'password' => 'Mwqs]Avk>q+8N2vs)zV36ia',
+            'charset' => 'utf8',
+        ]
+    ],
+];
+
+if (!YII_ENV_TEST) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+}
+
+return $config;
